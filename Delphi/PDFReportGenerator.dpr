@@ -35,7 +35,6 @@ begin
     AConnection := TdxBackendDatabaseSQLConnection(AManager.DataConnections.
       Add(TdxBackendDatabaseSQLConnection));
 
-    AConnection.ClassName;
     AConnection.DisplayName := AIni.ReadString('Connection', 'Name', '');
     AConnection.ConnectionString :=
       AIni.ReadString('Connection', 'ConnectionString', '');
