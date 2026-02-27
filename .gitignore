@@ -28,9 +28,10 @@
 
 # Default Delphi compiler directories
 # Content of this directories are generated with each Compile/Construct of a project.
-# Most of the time, files here have not there place in a code repository.
-#Win32/
-#Win64/
+# Most of the time, files here have not their place in a code repository.
+Win32/
+Win64/
+Win64x/
 #OSX64/
 #OSXARM64/
 #Android/
@@ -61,6 +62,7 @@
 *.cfg
 *.hpp
 *Resource.rc
+*.rsp
 
 # Delphi local files (user-specific info)
 *.local
@@ -75,8 +77,46 @@ __history/
 __recovery/
 *.~*
 
+
+# ------------------------------------------------------------
+# C++Builder specific
+# ------------------------------------------------------------
+
+# C++Builder compiler outputs
+*.obj
+*.hpp
+*.ilc
+*.ild
+*.ilf
+*.ils
+*.map
+*.tds
+
+# Precompiled headers
+*.pch
+
+# C++Builder packages and libraries
+*.bpl
+*.bpi
+*.lib
+*.a
+*.dll
+*.so
+
+# C++Builder intermediate / cache files
+*.cbproj.local
+*.cbproj.identcache
+*.cbproj.user
+*.cbtemp
+
+
 # Castalia statistics file (since XE7 Castalia is distributed with Delphi)
 *.stat
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+
+# Output files
+*.pdf
+*.docx
+*.zip
