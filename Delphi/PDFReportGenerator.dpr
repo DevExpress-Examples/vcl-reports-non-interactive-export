@@ -39,7 +39,7 @@ begin
       AConnection.ConnectionString := 'XpoProvider=SQLite; Data Source=nwind.db; Mode=ReadOnly';
 
       // Step 3: Define Report Parameter Values
-      AReport.LoadParametersFromReport;
+      AReport.Parameters.LoadFromLayout;
       // Set the "OrderIdParameter" value in the report layout
       AReport.Parameters['OrderIdParameter'].Value := AOrderID;
 
