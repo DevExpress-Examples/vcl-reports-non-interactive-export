@@ -37,7 +37,7 @@ This approach can be particularly beneficial for the following usage scenarios
 ## Test the Example
 
 1.  Open and build the Delphi project in the RAD Studio.
-2.  Start a console session and navigate to the _Delphi_ project directory.
+2.  Start a console session and navigate to the [Delphi](./Delphi/) project directory.
 3.  Run the app and specify the order ID (a number between 10248 and 11077):
 
     ```cli
@@ -56,13 +56,9 @@ binds the layout to data, and exports the generated report to a PDF file.
 ### Step 1: Initialize a Report and Import a Report Layout
 
 An application requires a template report layout previously created in the [Report Designer][designer].
-You can [import a report layout from a REPX file][file] or [load a layout from a database][database].
+You can [import a report layout from a REPX file][file-example] or [load a layout from a database][database-example].
 
-[designer]: https://docs.devexpress.com/VCL/405469/ExpressReports/vcl-reports
-[file]: https://github.com/DevExpress-Examples/vcl-reports-store-layout-template-file
-[database]: https://github.com/DevExpress-Examples/vcl-reports-store-layout-template-database
-
-This example imports a report layout from the `Order.repx` file.
+This example imports a report layout from the [Order.repx] file.
 
 **Delphi:**
 ```delphi
@@ -82,7 +78,7 @@ end;
 ### Step 2: Create a Database Connection
 
 Create a database connection component to supply data to the report.
-This example uses a SQLite sample database (`nwind.db`).
+This example uses a SQLite sample database ([nwind.db]).
 
 **Delphi:**
 ```delphi
@@ -100,19 +96,18 @@ end;
 ```
 
 For detailed information on data source management and supported database engines, refer to the following help topic:
-[VCL Backend: Supported Database Systems][dbms].
+[VCL Backend: Supported Database Systems][supported-dbms].
 
-[dbms]: https://docs.devexpress.com/VCL/405703/ExpressCrossPlatformLibrary/vcl-backend/vcl-backend-supported-database-systems
 
 ### Step 3: Define Report Parameter Values
 
 A report layout may include one or more parameters.
 Parameters allow you to modify database queries and generate different reports
 based on the same report template and underlying data.
-For example, `Order.repx` includes a single `OrderIDParameter` that filters data by order ID.
+For example, [Order.repx] includes a single `OrderIDParameter` that filters data by order ID.
 
-To modify parameters, load them using the `LoadParametersFromReport` method
-and assign values to `Report.Parameters` list members as follows:
+To modify parameters, load them using the [LoadParametersFromReport] method
+and assign values to [TdxReport.Parameters] list members as follows:
 
 **Delphi:**
 ```delphi
@@ -124,7 +119,7 @@ AReport.Parameters['OrderIdParameter'].Value := AOrderID;
 
 ### Step 4: Export Report Content to a File
 
-This example exports a report to a PDF file:
+This example exports a report to a PDF file using the [TdxReport.ExportToPDF] method:
 
 **Delphi:**
 ```delphi
@@ -139,6 +134,9 @@ finally
 end;
 ```
 
+For detailed information on available export formats, refer to the following help topic:
+[TdxReport.ExportTo].
+
 ### Export Multiple Reports
 
 The approach outlined in this example allows you to generate and export multiple reports based on the same layout and data
@@ -147,7 +145,6 @@ You need to initialize the report layout and data connection once (steps 1 and 2
 and repeat steps 3 and 4 for each parameter.
 
 **Delphi:**
-
 ```delphi
 // ...
 AReport.LoadParametersFromReport;
@@ -170,24 +167,45 @@ end;
 
 ## Files to Review
 
--   [_Delphi/PDFReportGenerator.dpr_](./Delphi/PDFReportGenerator.dpr) generates a report in non-interactive (headless) mode.
--   [_Order.repx_](./Delphi/Order.repx) contains a report layout designed to generate a customer order report.
-    You can view and edit this file using the [file storage example application][example].
--   [_nwind.db_](./Delphi/nwind.db) contains the Northwind sample database.
+-   [PDFReportGenerator.dpr] generates a report in non-interactive (headless) mode.
+-   [Order.repx] contains a report layout designed to generate a customer order report.
+    You can view and edit this file using the [file storage example application][file-example].
+-   [nwind.db] contains the Northwind sample database.
    
-[example]: https://github.com/DevExpress-Examples/vcl-reports-store-layout-template-file
 
+[PDFReportGenerator.dpr]: ./Delphi/PDFReportGenerator.dpr
+[Order.repx]: ./Delphi/Order.repx
+[nwind.db]: ./Delphi/nwind.db
 
-## Documentation and Examples
+## Documentation
 
 -   [Introduction to VCL Reports](https://docs.devexpress.com/VCL/405469/ExpressReports/vcl-reports)
 -   [Tutorial: Create a table report using the Report Wizard](https://docs.devexpress.com/VCL/405760/ExpressReports/getting-started/create-table-report-using-report-wizard)
--   [How to store report layouts in REPX files (example application)](https://github.com/DevExpress-Examples/vcl-reports-store-layout-template-file)
--   [How to store report layouts in a database (example application)](https://github.com/DevExpress-Examples/vcl-reports-store-layout-template-database)
--   [How to use SQLite as a data source for reports (as demonstrated in the current example)](https://docs.devexpress.com/VCL/405750/ExpressCrossPlatformLibrary/vcl-backend/database-engines/vcl-backend-sqlite-support)
--   [API reference: `TdxReport.Layout` property](https://docs.devexpress.com/VCL/dxReport.TdxReport.Layout)
--   [API reference: `TdxBackendDatabaseSQLConnection` component](https://docs.devexpress.com/VCL/dxBackend.ConnectionString.SQL.TdxBackendDatabaseSQLConnection)
+-   [Use SQLite as a data source for reports (as demonstrated in the current example)](https://docs.devexpress.com/VCL/405750/ExpressCrossPlatformLibrary/vcl-backend/database-engines/vcl-backend-sqlite-support)
+-   API reference:
+    -   [TdxReport](https://docs.devexpress.com/VCL/dxReport.TdxReport)
+    -   [TdxReport.ExportToPDF], [TdxReport.ExportTo][TdxReport.ExportTo]
+    -   [TdxReport.Layout](https://docs.devexpress.com/VCL/dxReport.TdxReport.Layout)
+    -   [TdxReport.Parameters]
+    -   [TdxBackendDatabaseSQLConnection](https://docs.devexpress.com/VCL/dxBackend.ConnectionString.SQL.TdxBackendDatabaseSQLConnection)
 
+
+[designer]: https://docs.devexpress.com/VCL/405469/ExpressReports/vcl-reports
+[supported-dbms]: https://docs.devexpress.com/VCL/405703/ExpressCrossPlatformLibrary/vcl-backend/vcl-backend-supported-database-systems
+[TdxReport.ExportToPDF]: https://docs.devexpress.com/VCL/dxReport.TdxReport.ExportToPDF(System.Classes.TStream)
+[TdxReport.ExportTo]: https://docs.devexpress.com/VCL/dxReport.TdxReport.ExportTo%28dxBackend.TdxReportExportFormat-System.Classes.TStream%29#available-export-formats
+[TdxReport.Parameters]: https://docs.devexpress.com/VCL/dxReport.TdxReport.Parameters
+[LoadParametersFromReport]: https://docs.devexpress.com/VCL/dxReport.TdxReport.LoadParametersFromReport
+
+
+## More Examples
+
+-   [Store Report Layouts in REPX Files][file-example]
+-   [Store Report Layouts in a Database][database-example]
+
+
+[file-example]: https://github.com/DevExpress-Examples/vcl-reports-store-layout-template-file
+[database-example]: https://github.com/DevExpress-Examples/vcl-reports-store-layout-template-database
 
 <!-- feedback -->
 ## Does This Example Address Your Development Requirements/Objectives?
