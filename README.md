@@ -106,12 +106,10 @@ Parameters allow you to modify database queries and generate different reports
 based on the same report template and underlying data.
 For example, [Order.repx] includes a single `OrderIDParameter` that filters data by order ID.
 
-To modify parameters, load them using the [TdxReport.Parameters.LoadFromLayout] method
-and assign values to [TdxReport.Parameters] list members as follows:
+To modify parameters, assign values to [TdxReport.Parameters] list members as follows:
 
 **Delphi:**
 ```delphi
-AReport.Parameters.LoadFromLayout;
 // Set the "OrderIdParameter" value in the report layout
 AReport.Parameters['OrderIdParameter'].Value := AOrderID;
 ```
@@ -147,8 +145,6 @@ and repeat steps 3 and 4 for each parameter.
 **Delphi:**
 ```delphi
 // ...
-AReport.LoadParametersFromReport;
-
 for AOrderID in AOrderIDList:
     AReport.Parameters['OrderIdParameter'].Value := AOrderID;
 
@@ -187,7 +183,6 @@ end;
     -   [TdxReport.ExportToPDF], [TdxReport.ExportTo][TdxReport.ExportTo]
     -   [TdxReport.Layout](https://docs.devexpress.com/VCL/dxReport.TdxReport.Layout)
     -   [TdxReport.Parameters]
-    -   [TdxReport.Parameters.LoadFromLayout]
     -   [TdxBackendDatabaseSQLConnection](https://docs.devexpress.com/VCL/dxBackend.ConnectionString.SQL.TdxBackendDatabaseSQLConnection)
 
 
@@ -196,7 +191,6 @@ end;
 [TdxReport.ExportToPDF]: https://docs.devexpress.com/VCL/dxReport.TdxReport.ExportToPDF(System.Classes.TStream)
 [TdxReport.ExportTo]: https://docs.devexpress.com/VCL/dxReport.TdxReport.ExportTo%28dxBackend.TdxReportExportFormat-System.Classes.TStream%29#available-export-formats
 [TdxReport.Parameters]: https://docs.devexpress.com/VCL/dxReport.TdxReport.Parameters
-[TdxReport.Parameters.LoadFromLayout]: https://docs.devexpress.com/VCL/dxReport.Parameters.TdxReportParameters.LoadFromLayout
 
 
 ## More Examples
