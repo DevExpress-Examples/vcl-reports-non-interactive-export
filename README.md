@@ -175,32 +175,44 @@ end;
 
 ## Documentation
 
--   [Introduction to VCL Reports](https://docs.devexpress.com/VCL/405469/ExpressReports/vcl-reports)
--   [Tutorial: Create a table report using the Report Wizard](https://docs.devexpress.com/VCL/405760/ExpressReports/getting-started/create-table-report-using-report-wizard)
--   [Use SQLite as a data source for reports (as demonstrated in the current example)](https://docs.devexpress.com/VCL/405750/ExpressCrossPlatformLibrary/vcl-backend/database-engines/vcl-backend-sqlite-support)
+-   [Introduction to VCL Reports][reports-intro]
+-   [Tutorial: Create a table report using the Report Wizard][wizard-tutorial]
+-   [Use SQLite as a data source for reports (as demonstrated in the current example)][sqlite-data-source]
 -   API reference:
-    -   [TdxReport](https://docs.devexpress.com/VCL/dxReport.TdxReport)
-    -   [TdxReport.ExportToPDF], [TdxReport.ExportTo][TdxReport.ExportTo]
-    -   [TdxReport.Layout](https://docs.devexpress.com/VCL/dxReport.TdxReport.Layout)
+    -   [TdxReport]
+    -   [TdxReport.ExportToPDF], [TdxReport.ExportTo]
+    -   [TdxReport.Layout]
     -   [TdxReport.Parameters]
-    -   [TdxBackendDatabaseSQLConnection](https://docs.devexpress.com/VCL/dxBackend.ConnectionString.SQL.TdxBackendDatabaseSQLConnection)
+    -   [TdxBackendDatabaseSQLConnection]
 
-
+<!-- documentation links -->
 [designer]: https://docs.devexpress.com/VCL/405469/ExpressReports/vcl-reports
 [supported-dbms]: https://docs.devexpress.com/VCL/405703/ExpressCrossPlatformLibrary/vcl-backend/vcl-backend-supported-database-systems
+[reports-intro]: https://docs.devexpress.com/VCL/405469/ExpressReports/vcl-reports
+[wizard-tutorial]: https://docs.devexpress.com/VCL/405760/ExpressReports/getting-started/create-table-report-using-wizard-tutorial
+[sqlite-data-source]: https://docs.devexpress.com/VCL/405750/ExpressCrossPlatformLibrary/vcl-backend/database-engines/vcl-backend-sqlite-support
+
+<!-- reference links -->
+[TdxReport]: https://docs.devexpress.com/VCL/dxReport.TdxReport
+[TdxReport.Layout]: https://docs.devexpress.com/VCL/dxReport.TdxReport.Layout
 [TdxReport.ExportToPDF]: https://docs.devexpress.com/VCL/dxReport.TdxReport.ExportToPDF(System.Classes.TStream)
 [TdxReport.ExportTo]: https://docs.devexpress.com/VCL/dxReport.TdxReport.ExportTo%28dxBackend.TdxReportExportFormat-System.Classes.TStream%29#available-export-formats
 [TdxReport.Parameters]: https://docs.devexpress.com/VCL/dxReport.TdxReport.Parameters
+[TdxBackendDatabaseSQLConnection]: https://docs.devexpress.com/VCL/dxBackend.ConnectionString.SQL.TdxBackendDatabaseSQLConnection
 
 
 ## More Examples
 
 -   [Store Report Layouts in REPX Files][file-example]
 -   [Store Report Layouts in a Database][database-example]
+-   [Filter data records in a report][filter-data-records]
+-   [Localize the Report Viewer and Report Designer][localize]
 
-
+<!-- example links -->
 [file-example]: https://github.com/DevExpress-Examples/vcl-reports-store-layout-template-file
 [database-example]: https://github.com/DevExpress-Examples/vcl-reports-store-layout-template-database
+[filter-data-records]: https://github.com/DevExpress-Examples/vcl-filter-report-preview-based-on-grid-selected-rows
+[localize]: https://github.com/DevExpress-Examples/vcl-reports-localize
 
 <!-- feedback -->
 ## Does This Example Address Your Development Requirements/Objectives?
