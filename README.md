@@ -60,7 +60,9 @@ You can [import a report layout from a REPX file][file-example] or [load a layou
 
 This example imports a report layout from the [Order.repx] file.
 
-**Delphi:**
+<!-- start-code-block -->
+#### Delphi
+
 ```delphi
 AReport := TdxReport.Create(nil); // AReport: TdxReport;
 try
@@ -73,6 +75,7 @@ finally
     AReport.Free;
 end;
 ```
+<!-- end-code-block -->
 
 
 ### Step 2: Create a Database Connection
@@ -80,7 +83,9 @@ end;
 Create a database connection component to supply data to the report.
 This example uses a SQLite sample database ([nwind.db]).
 
-**Delphi:**
+<!-- start-code-block -->
+#### Delphi
+
 ```delphi
 // AConnection: TdxBackendDatabaseSQLConnection;
 AConnection := TdxBackendDatabaseSQLConnection.Create(nil);
@@ -94,6 +99,7 @@ finally
     AConnection.Free;
 end;
 ```
+<!-- end-code-block -->
 
 For detailed information on data source management and supported database engines, refer to the following help topic:
 [VCL Backend: Supported Database Systems][supported-dbms].
@@ -108,18 +114,23 @@ For example, [Order.repx] includes a single `OrderIDParameter` that filters data
 
 To modify parameters, assign values to [TdxReport.Parameters] list members as follows:
 
-**Delphi:**
+<!-- start-code-block -->
+#### Delphi
+
 ```delphi
 // Set the "OrderIdParameter" value in the report layout
 AReport.Parameters['OrderIdParameter'].Value := AOrderID;
 ```
+<!-- end-code-block -->
 
 
 ### Step 4: Export Report Content to a File
 
 This example exports a report to a PDF file using the [TdxReport.ExportToPDF] method:
 
-**Delphi:**
+<!-- start-code-block -->
+#### Delphi
+
 ```delphi
 AStream := TMemoryStream.Create; // AStream: TMemoryStream;
 try
@@ -131,6 +142,8 @@ finally
     AStream.Free;
 end;
 ```
+<!-- end-code-block -->
+
 
 For detailed information on available export formats, refer to the following help topic:
 [TdxReport.ExportTo].
@@ -142,7 +155,9 @@ using a list of parameters.
 You need to initialize the report layout and data connection once (steps 1 and 2)
 and repeat steps 3 and 4 for each parameter.
 
-**Delphi:**
+<!-- start-code-block -->
+#### Delphi
+
 ```delphi
 // ...
 for AOrderID in AOrderIDList:
@@ -159,6 +174,7 @@ for AOrderID in AOrderIDList:
     end;
 end;
 ```
+<!-- end-code-block -->
 
 
 ## Files to Review
